@@ -41,6 +41,12 @@ jobs:
         with:
           toolchain: 1.97.1
           targets: aarch64-linux-android,armv7-linux-androideabi,x86_64-linux-android
+  
+      - name: Setup bun
+        uses: oven-sh/setup-bun@v2
+        with:
+          # bun.lock files use the v1 format (stable bun)
+          bun-version: 1.3.14
 
       - name: Install cargo-ndk
         run: cargo install cargo-ndk
