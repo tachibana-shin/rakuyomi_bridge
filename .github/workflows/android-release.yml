@@ -27,6 +27,12 @@ jobs:
           submodules: recursive
           fetch-depth: 0
 
+      - name: Setup bun
+        uses: oven-sh/setup-bun@v2
+        with:
+          # bun.lock files use the v1 format (stable bun)
+          bun-version: 1.3.14
+
       - name: Clone RakuYomi
         uses: actions/checkout@v4
         with:
