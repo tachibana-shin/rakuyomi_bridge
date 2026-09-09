@@ -34,17 +34,20 @@ jobs:
           bun-version: 1.3.14
 
       - name: Clone RakuYomi
-        uses: actions/checkout@v4
-        with:
-          repository: tachibana-shin/rakuyomi
-          path: rakuyomi
+        # Use a plain git clone instead of actions/checkout into a subdir,
+        # which intermittently left rakuyomi/backend without its files on
+        # the runner. Verify the crate manifest actually exists afterwards.
+        run: |
+          git clone --depth 1 --branch main https://github.com/tachibana-shin/rakuyomi rakuyomi
+          test -f rakuyomi/backend/Cargo.toml
 
       - name: Install Rust
         uses: dtolnay/rust-toolchain@stable
         with:
-          # Pin the toolchain so CI is reproducible; `stable` moves under us
-          # and occasionally breaks the Android cross-build.
-          toolchain: 1.97.1
+          # rakuyomi/rust-toolchain.toml pins `stable`, so rustup overrides
+          # whatever this workflow selects; keep them aligned to avoid
+          # downloading two toolchains.
+          toolchain: stable
           targets: aarch64-linux-android,armv7-linux-androideabi,x86_64-linux-android
 
       - name: Install system dependencies
@@ -56,7 +59,7 @@ jobs:
       - name: Cache Rust Dependencies
         uses: swatinem/rust-cache@v2
         with:
-          workspaces: "rakuyomi -> backend -> target"
+          workspaces: "rakuyomi/backend -> target"
           prefix-key: "rust-cache"
 
       - name: Cache Cargo

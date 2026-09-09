@@ -78,7 +78,8 @@ bridge/
 - The `.so` is built via `scripts/build-rust-android.sh` from the rakuyomi monorepo.
   The headless module re-uses `androidApp/src/main/jniLibs/` via
   `sourceSets["main"].jniLibs` to avoid duplicating the 50MB native payload.
-- Rust toolchain: 1.97.1 (pinned) with Android targets (`aarch64-linux-android`,
+- Rust toolchain: `stable` (rakuyomi's `rust-toolchain.toml` pins `stable` too)
+  with Android targets (`aarch64-linux-android`,
   `armv7-linux-androideabi`, `x86_64-linux-android`). Requires `cargo-ndk`.
 
 ## CI/CD
@@ -93,7 +94,7 @@ via `workflow_call` from the release workflow.
 Pipeline:
 1. **Checkout bridge** (at workspace root)
 2. **Clone RakuYomi** (full `tachibana-shin/rakuyomi` repo to `rakuyomi/`)
-3. **Install Rust** (dtolnay/rust-toolchain@stable, 1.95.0, Android targets)
+3. **Install Rust** (dtolnay/rust-toolchain@stable, `stable`, Android targets)
 4. **Install cargo-ndk** + system deps (fontconfig, freetype)
 5. **Build Rust Android libraries** (`rakuyomi/scripts/build-rust-android.sh`,
    với `BRIDGE_DIR=${{ github.workspace }}`, dev mode — only
