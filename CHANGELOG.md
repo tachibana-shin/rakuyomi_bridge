@@ -1,3 +1,13 @@
+## [1.2.2](https://github.com/tachibana-shin/rakuyomi_bridge/compare/v1.2.1...v1.2.2) (2026-09-09)
+
+
+### Bug Fixes
+
+* make rakuyomi checkout reliable and align toolchain ([74de293](https://github.com/tachibana-shin/rakuyomi_bridge/commit/74de2934e8128c344c81de3359203ad706e47bc9))
+* release ([b076dc9](https://github.com/tachibana-shin/rakuyomi_bridge/commit/b076dc98628bd0702d7fc12ff90d9aff22d0fef7))
+* repair Android CI rust build ([f744a6a](https://github.com/tachibana-shin/rakuyomi_bridge/commit/f744a6a5f636a4ab38dddaadba1a61f3f454899c))
+* update rust version ([096affa](https://github.com/tachibana-shin/rakuyomi_bridge/commit/096affa36661de2c68c85a615497c01d077482e0))
+
 ## [1.2.1](https://github.com/tachibana-shin/rakuyomi_bridge/compare/v1.2.0...v1.2.1) (2026-09-06)
 
 
