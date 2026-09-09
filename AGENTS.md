@@ -78,7 +78,7 @@ bridge/
 - The `.so` is built via `scripts/build-rust-android.sh` from the rakuyomi monorepo.
   The headless module re-uses `androidApp/src/main/jniLibs/` via
   `sourceSets["main"].jniLibs` to avoid duplicating the 50MB native payload.
-- Rust toolchain: 1.95.0 with Android targets (`aarch64-linux-android`,
+- Rust toolchain: 1.97.1 (pinned) with Android targets (`aarch64-linux-android`,
   `armv7-linux-androideabi`, `x86_64-linux-android`). Requires `cargo-ndk`.
 
 ## CI/CD
