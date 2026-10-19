@@ -1,3 +1,10 @@
+# [1.4.0](https://github.com/tachibana-shin/rakuyomi_bridge/compare/v1.3.0...v1.4.0) (2026-10-19)
+
+
+### Features
+
+* release new version ([b720150](https://github.com/tachibana-shin/rakuyomi_bridge/commit/b720150c2c2b615fa00560372a93113fb470419e))
+
 # [1.3.0](https://github.com/tachibana-shin/rakuyomi_bridge/compare/v1.2.2...v1.3.0) (2026-09-25)
 
 
